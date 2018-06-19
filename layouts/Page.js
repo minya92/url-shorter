@@ -4,9 +4,11 @@ import styled from 'styled-components'
 
 const Nav = styled.div`
 	display: flex;
-	
+	margin: 10px;
+	font-size: 20px;
 	a {
 		margin: 0 10px;
+		text-decoration: none;
 	}
 `
 

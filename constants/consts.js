@@ -1,4 +1,2 @@
-export const INCREMENT = 'INCREMENT'
-export const DECREMENT = 'DECREMENT'
-export const RESET = 'RESET'
-export const TICK = 'TICK'
+export const URL_RECEIVE = 'URL_RECEIVE'
+export const CLEAR_URL = 'CLEAR_URL'

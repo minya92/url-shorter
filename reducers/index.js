@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux'
-import counter from './counter'
-import clock from './clock'
+import url from './url'
 
 export default combineReducers({
-	counter,
-	clock
+	url
 })
