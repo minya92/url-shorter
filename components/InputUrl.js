@@ -63,7 +63,7 @@ const ShortUrl = styled.div`
 	a {
 		font-size: 20px;
 		text-decoration: none;
-		color: #30336b;
+		color: #3498db;
 		margin: 10px;
 	}
 `

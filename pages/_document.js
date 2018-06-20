@@ -1,15 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheet, injectGlobal } from 'styled-components'
-
-injectGlobal`
-    @import url('https://fonts.googleapis.com/css?family=Roboto');
-    body {
-        font-family: Roboto;
-        margin: 0;
-        padding: 0;
-        background-color: #ecf0f1;
-    }
-`
+import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
     static getInitialProps ({ renderPage }) {
@@ -23,6 +13,7 @@ export default class MyDocument extends Document {
         return (
             <html>
             <Head>
+	            <link rel='stylesheet' href='/_next/static/style.css' />
                 {this.props.styleTags}
             </Head>
             <body>
