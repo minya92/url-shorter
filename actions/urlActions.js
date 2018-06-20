@@ -2,9 +2,14 @@ import {URL_RECEIVE, CLEAR_URL} from '../constants/consts'
 
 export const sendUrl = (url) => {
 	return (dispatch) => {
-        setTimeout(() => {
-            dispatch({ type: URL_RECEIVE, payload: '1234' })
-        }, 1000)
+		fetch(`/api/add/?site=${url}`)
+			.then((response) => {
+				return response.json();
+			})
+			.then((data) => {
+				dispatch({ type: URL_RECEIVE, payload: data.short })
+			})
+			.catch( console.error );
 	}
 }
 
