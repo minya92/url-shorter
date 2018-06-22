@@ -81,13 +81,11 @@ class InputUrl extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault()
-		console.log('---- submit')
 		this.props.dispatch(sendUrl(this.state.value))
 	}
 
     handleCopy = (event) => {
         event.preventDefault()
-        console.log('---- copy')
     }
 
     handleFocus = (event) => {
