@@ -56,6 +56,7 @@ const ShortUrl = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	height: 140px;
 	& > div {
 		display: flex;
 	}
@@ -89,6 +90,11 @@ class InputUrl extends Component {
         console.log('---- copy')
     }
 
+    handleFocus = (event) => {
+        event.target.select();
+    }
+
+
     onCopy = () => {
 		this.setState({copied: true})
 		setTimeout(() => {
@@ -108,7 +114,9 @@ class InputUrl extends Component {
 					?
                     <ShortUrl>
 						<Form onSubmit={this.handleCopy}>
-                            <input type="text" value={getUrl() + this.props.shortUrl} readOnly={true}/>
+                            <input type="text" value={getUrl() + this.props.shortUrl}
+                                   onFocus={this.handleFocus}
+                                   readOnly={true}/>
                             <CopyToClipboard text={getUrl() + this.props.shortUrl}
 								onCopy={this.onCopy}>
 								<button>COPY</button>

@@ -26,10 +26,6 @@ export default ({ children, title = 'Url Shorter' }) => (
 			<meta charSet="utf-8" />
 			<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 		</Head>
-			<Nav>
-				<ActiveLink href="/">Home</ActiveLink> |
-				<ActiveLink href="/about">About</ActiveLink>
-			</Nav>
 		<App>
 			{ children }
 		</App>
