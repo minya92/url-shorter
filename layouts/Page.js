@@ -19,7 +19,7 @@ const App = styled.div`
 	height: 90vh;
 `
 
-export default ({ children, title = 'Url Shorter' }) => (
+export default ({ children, title = 'URL Shorter' }) => (
 	<div>
 		<Head>
 			<title>{ title }</title>

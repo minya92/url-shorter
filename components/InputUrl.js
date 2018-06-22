@@ -102,6 +102,7 @@ class InputUrl extends Component {
 
 	clearUrl = () => {
 		const {dispatch} = this.props
+		this.setState({value: ''})
 		dispatch(clearUrl())
 	}
 
