@@ -8,8 +8,7 @@ Instructions to deployment
 cd url-shorter
 npm i
 npm run build
-docker build -t url-shorter .
-docker run -d -p 3000:3000 --name url-shorter --restart always url-shorter
+docker run --restart=always --name url-shorter -d -p 3000:3000 -v "$PWD":/usr/src/app -w /usr/src/app node:10 npm start
 ```
 
 For update code
