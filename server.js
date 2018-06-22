@@ -1,6 +1,8 @@
 const express = require('express')
 const next = require('next')
 const Datastore = require('nedb');
+const md5 = require('md5');
+const bodyParser = require('body-parser')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
@@ -11,27 +13,23 @@ const db = new Datastore({filename : 'database.json'});
 db.loadDatabase();
 db.ensureIndex({fieldName: 'short'});
 
-const randWDclassic = (n) => {  // [ 3 ] random words and digits by the wocabulary
-	var s ='', abd ='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', aL = abd.length;
-	while(s.length < n)
-		s += abd[Math.random() * aL|0];
-	return s;
-} //such as "46c17fkfpl"
-
 app.prepare()
     .then(() => {
         const server = express()
+
+		server.use(bodyParser.json())
 
         server.get('/posts/:id', (req, res) => {
             return app.render(req, res, '/posts', {id: req.params.id})
         })
 
-	    server.get('/api/add', (req, res) => {
-	    	const shortUrl = randWDclassic(4);
+	    server.post('/api/add', (req, res) => {
+	    	const site = req.body.site
 	    	let pushData = {};
-	        if (req.query.site) {
-		        pushData = {
-		        	site : req.query.site,
+            if (site) {
+                const shortUrl = md5(site).slice(0, 4);
+                pushData = {
+		        	site : site,
 			        short: shortUrl
 		        }
 		        db.insert(pushData);
