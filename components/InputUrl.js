@@ -8,10 +8,6 @@ const getUrl = () => {
 	return `${location.protocol}//${location.host}/`
 }
 
-const Wrapper = styled.div`
-
-`
-
 const Form = styled.form`
 	display: flex;
 	
@@ -108,7 +104,7 @@ class InputUrl extends Component {
 
 	render () {
 		return (
-			<Wrapper>
+			<div>
                 { this.props.shortUrl
 					?
                     <ShortUrl>
@@ -136,7 +132,7 @@ class InputUrl extends Component {
                         <button>SHORT</button>
                     </Form>
                 }
-			</Wrapper>
+			</div>
 		)
 	}
 }
