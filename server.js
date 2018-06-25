@@ -42,7 +42,7 @@ app.prepare()
 		        db.find({short: req.params[0].slice(1)}, function (err, data) {
 			        if (data && data[0] && data[0].site) {
 			        	let site = data[0].site;
-			        	if (!site.indexOf('http') + 1) {
+			        	if (!(site.indexOf('http') + 1)) {
 			        		site = 'http://' + site
 						}
 				        res.redirect(301, site);
