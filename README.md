@@ -1,5 +1,7 @@
 # Url shorter
 
+Demo: [4cut.ru](https://4cut.ru)
+
 starter template from  [ssr-react-redux-styled](https://github.com/minya92/ssr-react-redux-styled)
 
 Instructions to deployment
